@@ -1,124 +1,43 @@
 import "./index.css";
 import { Composition } from "remotion";
-import { MiVideoComponent } from "./MiVideoComponent";
-import { VideoWithSubtitles } from "./VideoWithSubtitles";
-import { VideoWithStyledSubtitles } from "./VideoWithStyledSubtitles";
-import { VideoVerticalWithSubtitles } from "./VideoVerticalWithSubtitles";
-import { VideoVerticalBottomHalf } from "./VideoVerticalBottomHalf";
+import { VideoVertical9x16Center } from "./VideoVertical9x16Center";
+import { VideoVertical9x16Bottom } from "./VideoVertical9x16Bottom";
+import { VideoVertical9x16Circle } from "./VideoVertical9x16Circle";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* Nueva composición para tu video personalizado */}
+      {/* Componente 1: Video 9:16 completo con subtítulos al centro */}
       <Composition
-        id="MiVideo"
-        component={MiVideoComponent}
-        durationInFrames={300} // Ajusta según la duración de tu video
+        id="VideoCenter"
+        component={VideoVertical9x16Center}
+        durationInFrames={690} // 23 segundos a 30fps
         fps={30}
-        width={1920}
-        height={1080}
+        width={1080}
+        height={1920}
       />
 
-      {/* Composición con video y subtítulos */}
+      {/* Componente 2: Video en mitad inferior con subtítulos abajo del centro */}
       <Composition
-        id="VideoConSubtitulos"
-        component={VideoWithSubtitles}
-        durationInFrames={720} // 24 segundos a 30fps
+        id="VideoBottom"
+        component={VideoVertical9x16Bottom}
+        durationInFrames={690} // 23 segundos a 30fps
         fps={30}
-        width={1920}
-        height={1080}
-        defaultProps={{
-          subtitleStyle: 'modern' as const,
-          subtitlePosition: 'bottom' as const,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
-          textColor: '#ffffff',
-          fontSize: 48
-                 }}
-       />
+        width={1080}
+        height={1920}
+      />
 
-       {/* Composiciones con diferentes estilos de subtítulos */}
-       <Composition
-         id="VideoGlassmorphism"
-         component={VideoWithStyledSubtitles}
-         durationInFrames={720}
-         fps={30}
-         width={1920}
-         height={1080}
-         defaultProps={{
-           variant: 'glassmorphism' as const
-         }}
-       />
-
-       <Composition
-         id="VideoShadow"
-         component={VideoWithStyledSubtitles}
-         durationInFrames={720}
-         fps={30}
-         width={1920}
-         height={1080}
-         defaultProps={{
-           variant: 'shadow' as const
-         }}
-       />
-
-       {/* Composiciones para formato vertical 9:16 (Redes Sociales) */}
-       <Composition
-         id="ShortBasico"
-         component={VideoVerticalWithSubtitles}
-         durationInFrames={720}
-         fps={30}
-         width={1080}
-         height={1920}
-         defaultProps={{
-           variant: 'basic' as const,
-           subtitleStyle: 'modern' as const,
-           backgroundColor: 'rgba(0, 0, 0, 0.8)',
-           textColor: '#ffffff',
-           fontSize: 56
-         }}
-       />
-
-       <Composition
-         id="ShortGlassmorphism"
-         component={VideoVerticalWithSubtitles}
-         durationInFrames={720}
-         fps={30}
-         width={1080}
-         height={1920}
-         defaultProps={{
-           variant: 'glassmorphism' as const
-         }}
-       />
-
-       <Composition
-         id="ShortShadow"
-         component={VideoVerticalWithSubtitles}
-         durationInFrames={720}
-         fps={30}
-         width={1080}
-         height={1920}
-         defaultProps={{
-           variant: 'shadow' as const
-         }}
-       />
-
-       <Composition
-         id="ShortBottomHalf"
-         component={VideoVerticalBottomHalf}
-         durationInFrames={720}
-         fps={30}
-         width={1080}
-         height={1920}
-         defaultProps={{
-           subtitleStyle: 'modern' as const,
-           backgroundColor: 'rgba(0, 0, 0, 0.8)',
-           textColor: '#ffffff',
-           fontSize: 56,
-           topBackgroundColor: '#000000'
-         }}
-       />
+      {/* Componente 3: Video en círculo superior izquierda con subtítulos al medio */}
+      <Composition
+        id="VideoCircle"
+        component={VideoVertical9x16Circle}
+        durationInFrames={690} // 23 segundos a 30fps
+        fps={30}
+        width={1080}
+        height={1920}
+      />
     </>
   );
 };

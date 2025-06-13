@@ -1,0 +1,14 @@
+# Ignorar archivos JavaScript en la carpeta scripts
+src/scripts/*.js
+
+# Ignorar archivos de configuración
+*.config.js
+*.config.mjs
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de build
+dist/
+build/
+out/ 
