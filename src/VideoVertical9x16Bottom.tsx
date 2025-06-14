@@ -75,7 +75,7 @@ Here's...`;
           <SubtitlesHighlight
             text={currentSubtitle}
             position="center"
-            fontSize={56}
+            fontSize={64}
           />
         </div>
       )}

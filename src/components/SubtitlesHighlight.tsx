@@ -16,12 +16,12 @@ export const SubtitlesHighlight: React.FC<SubtitlesHighlightProps> = ({
   const getPositionStyles = () => {
     switch (position) {
       case 'top':
-        return { top: '8%', transform: 'translateX(-50%)' };
+        return { top: '5%', transform: 'translateX(-50%)' };
       case 'center':
         return { top: '50%', transform: 'translate(-50%, -50%)' };
       case 'bottom':
       default:
-        return { bottom: '12%', transform: 'translateX(-50%)' };
+        return { bottom: '8%', transform: 'translateX(-50%)' };
     }
   };
 
@@ -39,31 +39,18 @@ export const SubtitlesHighlight: React.FC<SubtitlesHighlightProps> = ({
     >
       <p
         style={{
-          // Estilo meme con contorno negro grueso
+          // Estilo meme con contorno negro súper grueso
           fontFamily: "'Montserrat', 'Poppins', system-ui, -apple-system, sans-serif",
-          fontWeight: 800, // ExtraBold
+          fontWeight: 900, // ExtraBold
           color: 'white',
           fontSize: `${fontSize}px`,
           textAlign: 'center',
           margin: 0,
-          lineHeight: 1.2,
-          
-          // Borde negro más grueso
-          WebkitTextStroke: '4px black', // Aumentado de 2px a 4px
-          textShadow: `
-            -4px -4px 0 black,
-            4px -4px 0 black,
-            -4px 4px 0 black,
-            4px 4px 0 black,
-            -3px -3px 0 black,
-            3px -3px 0 black,
-            -3px 3px 0 black,
-            3px 3px 0 black,
-            -2px -2px 0 black,
-            2px -2px 0 black,
-            -2px 2px 0 black,
-            2px 2px 0 black
-          `, // Múltiples capas para contorno más grueso
+          WebkitTextStroke: '1px black',
+          letterSpacing: '1px',
+          lineHeight: '1.2',
+          padding: '10px 20px',
+          filter: 'drop-shadow(2px 2px 0px black) drop-shadow(-2px -2px 0px black) drop-shadow(2px -2px 0px black) drop-shadow(-2px 2px 0px black)',
         }}
       >
         {text}
