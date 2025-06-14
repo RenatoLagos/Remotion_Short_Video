@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { SubtitlesHighlight } from './components/SubtitlesHighlight';
 import { parseSRT, getCurrentSubtitle } from './utils/srtParser';
+import { CURRENT_FONT } from './config/fonts';
 
 export const VideoVertical9x16Circle: React.FC = () => {
   const frame = useCurrentFrame();
@@ -77,7 +78,7 @@ Here's...`;
         <SubtitlesHighlight
           text={currentSubtitle}
           position="center"
-          fontSize={64}
+          fontFamily={CURRENT_FONT}
         />
       )}
     </div>

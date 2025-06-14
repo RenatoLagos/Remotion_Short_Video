@@ -1,15 +1,18 @@
 import React from 'react';
+import { FontFamily } from '../config/fonts';
 
 interface SubtitlesHighlightProps {
   text: string;
   position?: 'bottom' | 'top' | 'center';
   fontSize?: number;
+  fontFamily?: FontFamily;
 }
 
 export const SubtitlesHighlight: React.FC<SubtitlesHighlightProps> = ({
   text,
   position = 'bottom',
-  fontSize = 56
+  fontSize = 60,
+  fontFamily = 'Figtree'
 }) => {
   if (!text) return null;
 
@@ -23,6 +26,15 @@ export const SubtitlesHighlight: React.FC<SubtitlesHighlightProps> = ({
       default:
         return { bottom: '8%', transform: 'translateX(-50%)' };
     }
+  };
+
+  const getFontFamily = (font: FontFamily): string => {
+    const fontMap = {
+      'Figtree': "'Figtree', 'Montserrat', system-ui, -apple-system, sans-serif",
+      'Poppins': "'Poppins', 'Montserrat', system-ui, -apple-system, sans-serif", 
+      'Nunito': "'Nunito', 'Montserrat', system-ui, -apple-system, sans-serif"
+    };
+    return fontMap[font];
   };
 
   return (
@@ -39,18 +51,20 @@ export const SubtitlesHighlight: React.FC<SubtitlesHighlightProps> = ({
     >
       <p
         style={{
-          // Estilo meme con contorno negro súper grueso
-          fontFamily: "'Montserrat', 'Poppins', system-ui, -apple-system, sans-serif",
-          fontWeight: 900, // ExtraBold
+          fontFamily: getFontFamily(fontFamily),
+          fontWeight: 900,
           color: 'white',
           fontSize: `${fontSize}px`,
           textAlign: 'center',
           margin: 0,
-          WebkitTextStroke: '1px black',
+          WebkitTextStroke: '22px black',
+          paintOrder: 'stroke fill',
+          textRendering: 'optimizeLegibility',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
           letterSpacing: '1px',
           lineHeight: '1.2',
           padding: '10px 20px',
-          filter: 'drop-shadow(2px 2px 0px black) drop-shadow(-2px -2px 0px black) drop-shadow(2px -2px 0px black) drop-shadow(-2px 2px 0px black)',
         }}
       >
         {text}
