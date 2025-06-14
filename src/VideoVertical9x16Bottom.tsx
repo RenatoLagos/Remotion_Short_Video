@@ -74,7 +74,6 @@ Here's...`;
         }}>
           <SubtitlesHighlight
             text={currentSubtitle}
-            highlightWords={['critical', 'important', 'easy', 'Spanish', 'bill', 'favor']}
             position="center"
             fontSize={56}
           />

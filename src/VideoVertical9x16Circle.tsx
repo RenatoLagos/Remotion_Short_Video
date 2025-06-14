@@ -76,7 +76,6 @@ Here's...`;
       {currentSubtitle && (
         <SubtitlesHighlight
           text={currentSubtitle}
-          highlightWords={['critical', 'important', 'easy', 'Spanish', 'bill', 'favor', 'local']}
           position="center"
           fontSize={56}
         />
