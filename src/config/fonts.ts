@@ -33,4 +33,4 @@ export const AVAILABLE_FONTS: FontConfig[] = [
 export const DEFAULT_FONT: FontFamily = 'Figtree';
 
 // Para cambiar la fuente globalmente, modifica esta constante
-export const CURRENT_FONT: FontFamily = 'Nunito'; // Cambia aquí: 'Figtree' | 'Poppins' | 'Nunito' 
+export const CURRENT_FONT: FontFamily = 'Poppins'; // Cambia aquí: 'Figtree' | 'Poppins' | 'Nunito' 
